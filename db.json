@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "jhon",
+      "email": "jhon@gmail.com",
+      "phone": "1234567890"
+    },
+    {
+      "name": "Rishav Kumar",
+      "email": "iamrishav7837@gmail.com",
+      "phone": "07837113719",
+      "id": 4
+    },
+    {
+      "name": "f",
+      "email": "f",
+      "phone": "f",
+      "id": 5
+    },
+    {
+      "name": "q",
+      "email": "q",
+      "phone": "q",
+      "id": 6
+    },
+    {
+      "name": "f",
+      "email": "f",
+      "phone": "f",
+      "id": 7
+    },
+    {
+      "name": "f",
+      "email": "f",
+      "phone": "f",
+      "id": 8
+    },
+    {
+      "name": "as",
+      "email": "a",
+      "phone": "f",
+      "id": 9
+    },
+    {
+      "name": "f",
+      "email": "t",
+      "phone": "t",
+      "id": 10
+    },
+    {
+      "name": "f",
+      "email": "A",
+      "phone": "Q3R1",
+      "id": 11
+    },
+    {
+      "name": "f",
+      "email": "A",
+      "phone": "Q3R1",
+      "id": 12
+    },
+    {
+      "name": "a",
+      "email": "12",
+      "phone": "134",
+      "id": 13
+    },
+    {
+      "name": "ewfw",
+      "email": "2145",
+      "phone": "3wegq",
+      "id": 14
+    }
+  ]
+}

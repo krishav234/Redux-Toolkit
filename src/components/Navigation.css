@@ -1,0 +1,53 @@
+.sidenav {
+  height: 100vh;
+  width: 250px;
+  background-color: #ebebeb;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.sidenav a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 7px;
+}
+
+.sidenav a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.collapse {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#user {
+  cursor: pointer;
+  padding: 10px;
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+#user:hover {
+  background-color: #ddd;
+}
+
+#user {
+  display: flex;
+  justify-content: space-between;
+}
+
+

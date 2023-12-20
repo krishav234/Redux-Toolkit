@@ -1,0 +1,40 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  color: white;
+}
+th {
+  background-color: #a33d3d;
+}
+
+.table {
+  width: 60%;
+  
+}
+
+.table tr:hover {
+  background-color: blue;
+}
+
+.table .editbtn:hover{
+    cursor: pointer;
+}
+.tabledata{
+    display: flex;
+    padding: 12px;
+
+    justify-content: space-evenly;
+
+}
+.loader{
+  margin-top:50vh;
+  margin-left:50%;
+}
