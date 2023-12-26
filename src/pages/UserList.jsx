@@ -3,14 +3,26 @@ import "./userlist.css";
 import { AiFillDelete } from "react-icons/ai";
 import { AiFillEdit } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserData } from "../redux/slices/Userslice";
+import { deleteUserData, getUserData } from "../redux/slices/Userslice";
 import { ClipLoader } from "react-spinners";
+import { useNavigate } from "react-router-dom";
 
 const UserList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserData());
   }, []);
+
+  const handleDelete = (id) =>{
+    dispatch(deleteUserData(id)).then(data=>{
+      if(data.payload.id){
+        dispatch(getUserData());
+      }
+    })
+
+  }
+
+  const navigate = useNavigate()
 
   const { loader, error, userData } = useSelector((state) => state.user);
 
@@ -37,8 +49,8 @@ const UserList = () => {
                 <td>{data.email}</td>
                 <td>{data.phone}</td>
                 <td className="tabledata">
-                  <AiFillEdit className="editbtn" />
-                  <AiFillDelete className="editbtn" />
+                  <AiFillEdit onClick={()=>navigate(`createuser/${data.id}`)} className="editbtn" />
+                  <AiFillDelete onClick={()=>handleDelete(data.id)} className="editbtn" />
                 </td>
               </tr>
             ))}

@@ -5,7 +5,7 @@ import { TiArrowRightThick, TiArrowDownThick } from "react-icons/ti";
 
 const Navigation = () => {
   const [show, setShow] = useState(false);
-  // const [button, setButton] = useState(true);
+  const [car, setCar] = useState(false);
   const myref = useRef();
 
   useEffect(() => {
@@ -32,12 +32,25 @@ const Navigation = () => {
 
         {show ? (
           <div id="dd">
-            <Link to="/">User List</Link>
-            <Link to="createuser">Create user</Link>
+            <Link to="createuser/null">Create User</Link>
+            <Link to="/userlist">User List</Link>
           </div>
         ) : (
           <></>
         )}
+
+        <h4 id="user" onClick={()=>setCar(!car)}>Cars
+        <span>{car ? <TiArrowDownThick /> : <TiArrowRightThick />}</span>
+        </h4>
+        {
+          car?(
+              <div id ="cardd">
+                <Link to="/car">Add Car</Link>
+                <Link to="/carlist">Car List</Link>
+                </div>
+          ):(<></>)
+        }
+
       </div>
     </>
   );
