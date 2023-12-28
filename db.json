@@ -1,18 +1,48 @@
 {
   "users": [
     {
-      "name": "Rishav Kumar",
-      "email": "iamrishav7837@gmail.com",
-      "phone": "07837113719",
+      "name": "Rishav",
+      "email": "krishav234@gmail.com",
+      "phone": "1234567890",
       "id": 1
+    },
+    {
+      "name": "fw",
+      "email": "fq",
+      "phone": "qfw23",
+      "id": 2
+    },
+    {
+      "name": "123",
+      "email": "123",
+      "phone": "123",
+      "id": 3
     }
   ],
-  "cars":[
-    {  "name":"Alto",
-      "brand": "Maruti"
+  "cars": [
+    {
+      "name": "eg",
+      "brand": "fqw",
+      "year": "wfq",
+      "id": 101
+    },
+    {
+      "name": "f",
+      "brand": "f",
+      "year": "45",
+      "id": 102
+    },
+    {
+      "name": "f",
+      "brand": "f",
+      "year": "f",
+      "id": 103
+    },
+    {
+      "name": "f3",
+      "brand": "f3f",
+      "year": "f3",
+      "id": 104
     }
-    
   ]
 }
-
-

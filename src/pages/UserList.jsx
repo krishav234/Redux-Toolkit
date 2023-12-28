@@ -13,25 +13,27 @@ const UserList = () => {
     dispatch(getUserData());
   }, []);
 
-  const handleDelete = (id) =>{
-    dispatch(deleteUserData(id)).then(data=>{
-      if(data.payload.id){
+  const handleDelete = (id) => {
+    dispatch(deleteUserData(id)).then((data) => {
+      if (data.payload.id) {
         dispatch(getUserData());
       }
-    })
+    });
+  };
 
-  }
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { loader, error, userData } = useSelector((state) => state.user);
 
-
-
   return (
     <div className="table">
-      {loader === true  ? (
-        <ClipLoader color="#36D7B7" loading={loader} size={100} className="loader"/>
+      {loader === true ? (
+        <ClipLoader
+          color="#36D7B7"
+          loading={loader}
+          size={100}
+          className="loader"
+        />
       ) : (
         <table>
           <thead>
@@ -49,8 +51,14 @@ const UserList = () => {
                 <td>{data.email}</td>
                 <td>{data.phone}</td>
                 <td className="tabledata">
-                  <AiFillEdit onClick={()=>navigate(`createuser/${data.id}`)} className="editbtn" />
-                  <AiFillDelete onClick={()=>handleDelete(data.id)} className="editbtn" />
+                  <AiFillEdit
+                    onClick={() => navigate(`/createuser/${data.id}`)}
+                    className="editbtn"
+                  />
+                  <AiFillDelete
+                    onClick={() => handleDelete(data.id)}
+                    className="editbtn"
+                  />
                 </td>
               </tr>
             ))}

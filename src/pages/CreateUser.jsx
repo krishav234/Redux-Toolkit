@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./createuser.css";
-import { postData, getUserData, getUserById, putData } from "../redux/slices/Userslice";
+import {
+  postData,
+  getUserData,
+  getUserById,
+  putData,
+} from "../redux/slices/Userslice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaSpinner } from "react-icons/fa";
@@ -73,28 +78,25 @@ function CreateUser() {
   };
 
   useEffect(() => {
-    if (id && id!=="null") {
+    if (id && id !== "null") {
       setEditMode(true);
-      dispatch(getUserById(id))
-        .then((data) => {
-          if (data) {
-            // console.log(data?.payload)
-            setFormData({
-                name: data?.payload?.name,
-                email: data?.payload?.email,
-                phone: data?.payload?.phone,
-            })
-          } else {
-            toast.error("User not found");
-          }
-        })
-
+      dispatch(getUserById(id)).then((data) => {
+        if (data) {
+          setFormData({
+            name: data?.payload?.name,
+            email: data?.payload?.email,
+            phone: data?.payload?.phone,
+          });
+        } else {
+          toast.error("User not found");
+        }
+      });
     }
   }, [dispatch, id]);
-  
+
   const navigate = useNavigate();
 
-  const editUser= (e)=>{
+  const editUser = (e) => {
     e.preventDefault();
 
     const newErrors = {
@@ -114,20 +116,17 @@ function CreateUser() {
       return;
     }
 
-    
     setLoading(true);
-    dispatch(putData({formData,id}))
-    .then((data) => {
-      console.log(data)
-      if (data?.payload?.id) {
-        toast.success("Wow so easy!");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-     
+    dispatch(putData({ formData, id }))
+      .then((data) => {
+        if (data?.payload?.id) {
+          toast.success("Wow so easy!");
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
           });
-          navigate("/")
+          navigate("/userlist");
         } else {
           toast.error("Something went wrong!!");
         }
@@ -135,13 +134,12 @@ function CreateUser() {
       .finally(() => {
         setLoading(false);
       });
-  }
-console.log(typeof id)
+  };
 
   return (
     <div className="login-box">
-      <h2>{editMode?"Edit User":"Create User"}</h2>
-      <form onSubmit={id!=="null"?editUser:formValidation}>
+      <h2>{editMode ? "Edit User" : "Create User"}</h2>
+      <form onSubmit={id !== "null" ? editUser : formValidation}>
         <div className="user-box">
           <label htmlFor="name">Name</label>
           <input

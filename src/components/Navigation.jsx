@@ -23,34 +23,34 @@ const Navigation = () => {
   return (
     <>
       <div className="sidenav">
-        <h1>Demo</h1>
+        <h1>HomePage</h1>
 
         <h4 id="user" ref={myref} onClick={() => setShow(!show)}>
-          User
+          Users
           <span>{show ? <TiArrowDownThick /> : <TiArrowRightThick />}</span>
         </h4>
 
         {show ? (
           <div id="dd">
-            <Link to="createuser/null">Create User</Link>
+            <Link to="/createuser/null">Create User</Link>
             <Link to="/userlist">User List</Link>
           </div>
         ) : (
           <></>
         )}
 
-        <h4 id="user" onClick={()=>setCar(!car)}>Cars
-        <span>{car ? <TiArrowDownThick /> : <TiArrowRightThick />}</span>
+        <h4 id="user" onClick={() => setCar(!car)}>
+          Cars
+          <span>{car ? <TiArrowDownThick /> : <TiArrowRightThick />}</span>
         </h4>
-        {
-          car?(
-              <div id ="cardd">
-                <Link to="/car">Add Car</Link>
-                <Link to="/carlist">Car List</Link>
-                </div>
-          ):(<></>)
-        }
-
+        {car ? (
+          <div >
+            <Link to="/addcar/null">Add Car</Link>
+            <Link to="/carlist">Car List</Link>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );
