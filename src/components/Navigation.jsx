@@ -32,8 +32,8 @@ const Navigation = () => {
 
         {show ? (
           <div id="dd">
-            <Link to="/createuser/null">Create User</Link>
-            <Link to="/userlist">User List</Link>
+            <Link to="createuser/null">Create User</Link>
+            <Link to="userlist">User List</Link>
           </div>
         ) : (
           <></>
@@ -45,8 +45,8 @@ const Navigation = () => {
         </h4>
         {car ? (
           <div >
-            <Link to="/addcar/null">Add Car</Link>
-            <Link to="/carlist">Car List</Link>
+            <Link to="addcar/null">Add Car</Link>
+            <Link to="carlist">Car List</Link>
           </div>
         ) : (
           <></>
