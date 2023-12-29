@@ -27,6 +27,8 @@ const UserList = () => {
 
   return (
     <div className="table">
+        
+
       {loader === true ? (
         <ClipLoader
           color="#36D7B7"
