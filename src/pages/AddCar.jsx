@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const AddCar = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  console.log(useSelector((state)=>state.cars));
+  
   const { carData: allCars } = useSelector((state) => state.cars);
   const [editMode, setEditMode] = useState(false);
 

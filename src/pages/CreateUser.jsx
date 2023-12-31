@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "./createuser.css";
 import {
   postData,
-  getUserData,
   getUserById,
   putData,
 } from "../redux/slices/Userslice";

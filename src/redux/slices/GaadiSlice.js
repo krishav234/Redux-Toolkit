@@ -3,18 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const getCarData = createAsyncThunk("getCar", () => {
   return fetch("http://localhost:3001/cars").then((res) => res.json());
 });
-// export const getCarData = createAsyncThunk("getCar", async () => {
-//   try {
-//     const response = await fetch("http://localhost:3001/cars");
-//     if (!response.ok) {
-//       throw new Error(`Failed to fetch car data. Status: ${response.status}`);
-//     }
-//     const data = await response.json();
-//     return data;
-//   } catch (error) {
-//     throw error;
-//   }
-// });
+
 
 export const postCarData = createAsyncThunk("postCar", (carFormData) => {
   return fetch("http://localhost:3001/cars", {
@@ -25,17 +14,7 @@ export const postCarData = createAsyncThunk("postCar", (carFormData) => {
     body: JSON.stringify(carFormData),
   }).then((res) => res.json());
 });
-// export const postCarData = createAsyncThunk("postCar", async (carFormData) => {
-//   const response = await fetch("http://localhost:3001/cars", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(carFormData),
-//   });
-//   const data = await response.json();
-//   return data;
-// });
+
 
 export const getCarById = createAsyncThunk("getCarById", async (id) => {
   const response = await fetch(`http://localhost:3001/cars/${id}`);
@@ -43,19 +22,6 @@ export const getCarById = createAsyncThunk("getCarById", async (id) => {
   return data;
 });
 
-// export const putCarData = createAsyncThunk(
-//   "putCarData",
-//   async ({ carFormData, id }) => {
-//    const response= await fetch(`http://localhost:3001/cars/${id}`, {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(carFormData),
-//     })
-//     const data = await response.json()
-//     return data;
-//   });
 
 export const putCarData = createAsyncThunk(
   "putCarData",
